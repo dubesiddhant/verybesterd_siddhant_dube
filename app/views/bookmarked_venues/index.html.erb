@@ -16,8 +16,20 @@
 
       <% @bookmarked_venues.each do |bookmarked_venue| %>
       <tr>
-        <td><%= bookmarked_venue.dish.dish_names %></td>
-        <td><%= bookmarked_venue.venue.venue_name %></td>
+        <td>
+          <% if bookmarked_venue.dish.present? %>
+            <a href="/dish_lists/<%= bookmarked_venue.dish.id %>">
+              <%= bookmarked_venue.dish.dish_names %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if bookmarked_venue.venue.present? %>
+            <a href="/venue_details/<%= bookmarked_venue.venue.id %>">
+              <%= bookmarked_venue.venue.venue_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/bookmarked_venues/<%= bookmarked_venue.id %>" class="btn btn-primary">Show</a>
           <a href="/bookmarked_venues/<%= bookmarked_venue.id %>/edit" class="btn btn-warning">Edit</a>
