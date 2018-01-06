@@ -6,6 +6,7 @@ class DishListsController < ApplicationController
   end
 
   def show
+    @bookmarked_venue = BookmarkedVenue.new
     @dish_list = DishList.find(params[:id])
 
     render("dish_lists/show.html.erb")
