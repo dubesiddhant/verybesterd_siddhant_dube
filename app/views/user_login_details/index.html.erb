@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    User login details
+    <a href="/user_login_details/new" class="btn btn-lg btn-success">New User login detail</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Email</th>
+        <th>Password</th>
+        <th>User name</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @user_login_details.each do |user_login_detail| %>
+      <tr>
+        <td><%= user_login_detail.email %></td>
+        <td><%= user_login_detail.password %></td>
+        <td><%= user_login_detail.user_name %></td>
+        <td>
+          <a href="/user_login_details/<%= user_login_detail.id %>" class="btn btn-primary">Show</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
