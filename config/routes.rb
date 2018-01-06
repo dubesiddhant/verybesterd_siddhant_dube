@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Bookmarked_venue resource:
+  # CREATE
+  get "/bookmarked_venues/new", :controller => "bookmarked_venues", :action => "new"
+  post "/create_bookmarked_venue", :controller => "bookmarked_venues", :action => "create"
+
+  # READ
+  get "/bookmarked_venues", :controller => "bookmarked_venues", :action => "index"
+  get "/bookmarked_venues/:id", :controller => "bookmarked_venues", :action => "show"
+
+  # UPDATE
+  get "/bookmarked_venues/:id/edit", :controller => "bookmarked_venues", :action => "edit"
+  post "/update_bookmarked_venue/:id", :controller => "bookmarked_venues", :action => "update"
+
+  # DELETE
+  get "/delete_bookmarked_venue/:id", :controller => "bookmarked_venues", :action => "destroy"
+  #------------------------------
+
   # Routes for the Venue_detail resource:
   # CREATE
   get "/venue_details/new", :controller => "venue_details", :action => "new"
