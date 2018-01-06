@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Venue_detail resource:
+  # CREATE
+  get "/venue_details/new", :controller => "venue_details", :action => "new"
+  post "/create_venue_detail", :controller => "venue_details", :action => "create"
+
+  # READ
+  get "/venue_details", :controller => "venue_details", :action => "index"
+  get "/venue_details/:id", :controller => "venue_details", :action => "show"
+
+  # UPDATE
+  get "/venue_details/:id/edit", :controller => "venue_details", :action => "edit"
+  post "/update_venue_detail/:id", :controller => "venue_details", :action => "update"
+
+  # DELETE
+  get "/delete_venue_detail/:id", :controller => "venue_details", :action => "destroy"
+  #------------------------------
+
   # Routes for the Dish_list resource:
   # CREATE
   get "/dish_lists/new", :controller => "dish_lists", :action => "new"
