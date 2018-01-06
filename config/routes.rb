@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root :to => "dish_lists#index"
   # Routes for the Bookmarked_venue resource:
   # CREATE
