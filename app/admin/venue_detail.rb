@@ -1,5 +1,7 @@
 ActiveAdmin.register VenueDetail do
 
+ permit_params :venue_name, :venue_address
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
