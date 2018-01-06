@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @dish_list.errors.any? %>
+  <% @dish_list.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Dish List #<%= @dish_list.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_dish_list/<%= @dish_list.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for dish_names -->
+      <div class="form-group">
+        <label for="dish_names" class="control-label">
+          Dish names
+        </label>
+
+        <input type="text" id="dish_names" name="dish_names" placeholder="Dish names" class="form-control" value="<%= @dish_list.dish_names %>">
+      </div>
+
+      <!-- Label and input for dish_desc -->
+      <div class="form-group">
+        <label for="dish_desc" class="control-label">
+          Dish desc
+        </label>
+
+        <input type="text" id="dish_desc" name="dish_desc" placeholder="Dish desc" class="form-control" value="<%= @dish_list.dish_desc %>">
+      </div>
+
+      <!-- Label and input for cuisine -->
+      <div class="form-group">
+        <label for="cuisine" class="control-label">
+          Cuisine
+        </label>
+
+        <input type="text" id="cuisine" name="cuisine" placeholder="Cuisine" class="form-control" value="<%= @dish_list.cuisine %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Dish List
+      </button>
+      or
+      <a href="/dish_lists/<%= @dish_list.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
