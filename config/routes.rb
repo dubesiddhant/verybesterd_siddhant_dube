@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "dish_lists#index"
   # Routes for the Bookmarked_venue resource:
   # CREATE
   get "/bookmarked_venues/new", :controller => "bookmarked_venues", :action => "new"
