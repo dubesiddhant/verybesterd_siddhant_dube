@@ -1,6 +1,6 @@
 class DishListsController < ApplicationController
   def index
-    @dish_lists = DishList.all
+    @dish_lists = DishList.page(params[:page]).per(10)
 
     render("dish_lists/index.html.erb")
   end
